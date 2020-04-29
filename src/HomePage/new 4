@@ -1,0 +1,39 @@
+
+
+   renderTableHeader() {
+      let header = Object.keys(this.state.students[0])
+      return header.map((key, index) => {
+         return <th key={index}>{key.toUpperCase()}</th>
+      })
+   }
+
+   renderTableData() {
+		let i
+		  let table;
+  let buffer =[]
+      //return this.state.students.map((student, index) => {
+
+			for(i in this.state.data1)
+			{
+             table = <tr>
+               <td>{this.state.data1[i].Device_ID}</td>
+               <td>{this.state.data1[i].timestamp}</td>
+               <td>{<a href={'test'}> {'See Result'} </a>}</td>
+               <td>{<a href="#"  onClick={(event => this.DeviceIdClickHandler(i))}> {this.state.data1[i].Device_ID}>
+        Download_CSV
+      </a>}</td>
+
+            </tr>
+  buffer.push(table)
+			} 
+	 // })
+	  
+	 return (
+	     <div>
+       {buffer}
+      </div>
+
+	 )
+
+	  
+   }
